@@ -6,6 +6,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -81,7 +82,12 @@ public class BookController {
                 .orElseGet(() -> {
                     throw new BookNotFoundException(id);
                 });
+    }
 
+    // Cancel a book
+    @DeleteMapping("/books/{id}")
+    void deleteBook(@PathVariable Long id) {
+        repository.deleteById(id);
     }
 
 }
