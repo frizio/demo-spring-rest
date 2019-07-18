@@ -7,15 +7,17 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * Book
  */
 @Entity
 @Data
+@NoArgsConstructor
 public class Book {
 
-    @Id
+	@Id
     @GeneratedValue
     private Long id;
     
@@ -24,5 +26,11 @@ public class Book {
     private String author;
     
     private BigDecimal price;
-    
+
+    public Book(String name, String author, BigDecimal price) {
+        this.name   = name;
+        this.author = author;
+        this.price  = price;
+    }
+
 }
