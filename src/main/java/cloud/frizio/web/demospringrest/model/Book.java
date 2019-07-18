@@ -8,7 +8,9 @@ import javax.persistence.Id;
 
 import lombok.Data;
 
-
+/**
+ * Book
+ */
 @Entity
 @Data
 public class Book {
