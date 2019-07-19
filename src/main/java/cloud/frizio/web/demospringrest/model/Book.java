@@ -9,6 +9,7 @@ import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import cloud.frizio.web.demospringrest.validator.Author;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -27,6 +28,7 @@ public class Book {
     @NotEmpty(message = "Please provide a name")
     private String name;
     
+    @Author
     @NotEmpty(message = "Please provide a author")
     private String author;
     
