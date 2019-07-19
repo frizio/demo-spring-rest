@@ -34,16 +34,16 @@ public class DemoApplication {
             repository.save(new Book("The Life-Changing Magic of Tidying Up", "Marie Kondo", new BigDecimal("9.69")));
             repository.save(new Book("Refactoring: Improving the Design of Existing Code", "Martin Fowler", new BigDecimal("47.99")));
         
-            log.info("################ findAll() ################");
-            repository.findAll().forEach(x -> System.out.println(x));
-            log.info("###########################################");
+            log.trace("################ findAll() ################");
+            repository.findAll().forEach(x -> log.trace(x.toString()));
+            log.trace("###########################################");
 
-            log.info("################ findById() ################");
-            repository.findById(2l).ifPresent(x -> System.out.println(x));
-            log.info("###########################################");
-            log.info("############## findByAuthor() ##############");
-            repository.findByAuthor("Martin Fowler").ifPresent(x -> System.out.println(x));
-            log.info("###########################################");
+            log.trace("################ findById() ################");
+            repository.findById(2l).ifPresent(x -> log.trace(x.toString()));
+            log.trace("###########################################");
+            log.trace("############## findByAuthor() ##############");
+            repository.findByAuthor("Martin Fowler").ifPresent(x -> log.trace(x.toString()));
+            log.trace("###########################################");
         };
     }
 
